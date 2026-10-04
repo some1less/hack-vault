@@ -29,6 +29,7 @@ flowchart TB
 | `AthleteService` | body profile upsert, merged `Athlete` view |
 | `IntervalsService` | verify key, encrypt, import 90 days (range ends today+1), sync, disconnect |
 | `StreakService` | asks the plan engine for the week's run days, computes interval/deadline, refresh/reset |
+| `GroupService` | create / join by name / leave (owner handover, empty group deleted), leaderboard with refreshed streaks |
 | `EventsService` | calendar events CRUD |
 | `PlanService` | collects last month of events + answers → `EnginePlanGenerator` → ai-coach `/plan` → calendar events |
 | coach routes | whitelist check, forward to ai-coach with API keys in headers |

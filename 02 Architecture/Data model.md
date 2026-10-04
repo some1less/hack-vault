@@ -12,6 +12,8 @@ SQLAlchemy 2.0 ORM models in `backend/app/infrastructure/db/models/` must stay i
 erDiagram
     users ||--o| athletes : "body profile"
     users ||--o{ refresh_tokens : sessions
+    users ||--o{ group_members : joins
+    groups ||--o{ group_members : has
     athletes ||--o| intervals_athletes : "intervals.icu profile"
     intervals_athletes ||--o{ intervals_activities : runs
     intervals_activities ||--o{ intervals_activity_streams : "per-second"
@@ -30,6 +32,16 @@ erDiagram
         bool is_public "profile share link"
         date last_run_date "streak"
         int streak_days
+    }
+    groups {
+        uuid id PK
+        text name "unique on lower(name)"
+        uuid owner_id FK
+    }
+    group_members {
+        uuid group_id PK
+        uuid user_id PK
+        timestamptz joined_at
     }
     athletes {
         uuid user_id PK
@@ -75,10 +87,10 @@ erDiagram
 - `users.onboarding` holds the [[User journey]] answers (`TrainingAnswers`): goal, goalDate, startDate, runDays
   (0 = Monday), longRunDay, maxMinWeekday/Weekend, continuousRunMin, pain, injury6m, parq.
 - intervals.icu tables are prefixed `intervals_` and keyed by intervals.icu ids; sync upserts them.
-- `intervals_events` doubles as the **plan calendar**: the seed puts ML‑planner sessions there and
-  `POST /events/plan` is meant to fill it ([[ML planner]]).
-- The plan for the AI Plan page (`generated` + `sessions` + `basis`) has **no table yet** — see
-  [[Known limits and backlog]].
+- `intervals_events` doubles as the **plan calendar**: the seed puts planner sessions there, and
+  `POST /events/plan` returns new plan sessions as events that the AI Plan page saves ([[ML planner]]).
+- `groups` ↔ `users` is many‑to‑many through `group_members`; limits (10 members per group, 10 groups per user)
+  are checked in `GroupService` under row locks. Deleting an account leaves its groups first.
 - Sample data: `scripts/inicial data/intervals/*.parquet` (athlete "Jan Kowalski": 77 activities, 90 days
   wellness), aligned with a real intervals.icu pull (sample-data-01). Backend demo seed copies it from
   `backend/app/seed/sample/*.json`.

@@ -19,7 +19,8 @@ Back to [[00 Home]]
    runs, tells you honestly whether the data agrees, and changes the plan only if you say yes. → [[AI coach iRunny]]
 5. **Today's route** — a loop of the planned distance from where you are, mostly off‑street, with weather,
    air quality, elevation and a crowd estimate. → [[Route map]]
-6. **Stay consistent** — a run streak whose window comes from your plan's rhythm; share your profile by link.
+6. **Stay consistent, together** — a run streak whose window comes from your plan's rhythm, **running groups
+   with a streak leaderboard** to compete with friends, and a public profile link.
 
 ## Why it's different
 | Others | iRun |

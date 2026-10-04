@@ -32,6 +32,7 @@ Paths are relative to the repo root.
 | backend-09 | Run streak (+ plan rhythm from the engine) |
 | backend-10 | Events CRUD + `POST /events/plan` |
 | backend-11 | Real plan generator (ai-coach `/plan` → calendar events) |
+| groups-01 | Running groups + streak leaderboard |
 | integration-01 | Frontend ↔ backend wiring plan (contract) |
 | integration-02 … 05 | Contract paths, demo seed + read‑only, HTTP client, nginx proxy + e2e |
 | integration-06 | User‑pasted ORS key |

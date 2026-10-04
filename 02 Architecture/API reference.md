@@ -24,6 +24,10 @@ path below (nginx/Vite strip `/api`). `test_routes.py` pins the full route table
 | `POST /intervals/sync` | JWT | re‑import (dashboard calls it on open) |
 | `GET /activities?from&to` · `GET /wellness?from&to` | JWT | stored data, oldest first, inclusive dates |
 | `GET /users/{id}` · `GET /users/{id}/activities` | – | **public** profile; private = 404 (same as missing) |
+| `GET /groups` · `POST /groups {name}` | JWT | my groups / create (creator = owner + first member) |
+| `POST /groups/join {name}` | JWT | join by exact name (any case), idempotent |
+| `GET /groups/{id}` | JWT | members ranked by streak (each streak refreshed with its own plan window); 404 for non‑members |
+| `DELETE /groups/{id}/members/me` | JWT | leave; owner → longest member; last member deletes the group |
 | `GET/POST /events` · `GET/PATCH/DELETE /events/{id}` | JWT | calendar events CRUD |
 | `POST /events/plan` | JWT | next‑month plan from the plan engine (ai-coach `/plan`) → unsaved events (`id: null`); 503 `PLAN_UNAVAILABLE` if the engine is down |
 | `GET /coach/access` · `GET /coach/greeting` · `POST /coach/chat` · `POST /coach/voice` | JWT + whitelist | forwarded to ai-coach |
@@ -32,7 +36,7 @@ path below (nginx/Vite strip `/api`). `test_routes.py` pins the full route table
 ### Error codes
 `INVALID_CREDENTIALS`, `EMAIL_TAKEN`, `WRONG_PASSWORD`, `UNAUTHORIZED` (401, client logs out),
 `INTERVALS_AUTH` (key rejected), `INTERVALS_UNAVAILABLE`, `DEMO_READ_ONLY` (403), `VALIDATION_ERROR`,
-`NOT_FOUND`, `CONFLICT`, `NOT_WHITELISTED` (403), `COACH_UNAVAILABLE` (503), `PLAN_UNAVAILABLE` (503). Frontend adds `UNKNOWN` for network
+`NOT_FOUND`, `CONFLICT`, `NOT_WHITELISTED` (403), `COACH_UNAVAILABLE` (503), `PLAN_UNAVAILABLE` (503), `GROUP_NAME_TAKEN` (409), `GROUP_NAME_NOT_FOUND` (404), `GROUP_FULL`, `GROUP_LIMIT`. Frontend adds `UNKNOWN` for network
 failures / non‑JSON bodies, and `NOT_ENOUGH_RUNS`, `ONBOARDING_REQUIRED` for the AI Plan contract.
 
 ## AI Plan contract (frontend PR #43, mock reference)

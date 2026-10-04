@@ -33,8 +33,9 @@ Kuba and the 9 others come from `scripts/sql/seed.sql`, which only loads on an *
    - "aaa that was way too hard" → coach checks real runs → asks "keep or lighten?" → "lighter" → plan shrinks.
    - "my knee hurts" → "0 to 10?" → "6" → plan paused, see a physio.
    - Call: ring → iRunny greets → speak → spoken reply.
-7. **Profile** → Make profile public → open the link in a private window.
-8. Close with **"The AI never writes a session"** ([[Key decisions]]).
+7. **Groups** → create "Krakow Morning Runners" → leaderboard with streak medals; a second user joins by name.
+8. **Profile** → Make profile public → open the link in a private window.
+9. Close with **"The AI never writes a session"** ([[Key decisions]]).
 
 ## Things that can go wrong live
 - Route page: ORS quota / bad key → 503/502 message. Have a key in `route-map/.env`.

@@ -10,7 +10,7 @@ timeline
     Phase 3 · product shape : iRun design, onboarding with intervals.icu : Coach first cut (chat, safety, debrief) : Route-map service (ORS loops, weather)
     Phase 4 · wiring : Backend endpoints for the frontend Api : Frontend ↔ backend wiring, demo account, nginx proxy : Route page in the app, ORS connector
     Phase 5 · features : Voice call + iRunny in the site : Dark theme, preferences, profile sharing : Run streak from the plan rhythm : ML — running-only contracts, benchmark, outcome models
-    Phase 6 · finish : Seed of 10 users, events CRUD + plan port : AI Plan calendar page : Coach readiness PR : Hack vault
+    Phase 6 · finish : Seed of 10 users, events CRUD + plan port : AI Plan calendar page : Coach readiness, real plan generator : Running groups with a streak leaderboard : Hack vault
 ```
 
 ## By area
@@ -22,7 +22,7 @@ secret scanning → ci-04 full deploy pipeline → compose-01 permission fix →
 ### Backend
 backend-01 ORM → backend-02/03/04 intervals.icu schema, models, tests → auth-01 auth → backend-05 camelCase →
 backend-06 endpoints for the frontend → integration-02/03 contract paths + demo seed → backend-08 sharing →
-backend-09 streak → ml-33 PlanGenerator port → backend-10 events CRUD + plan endpoint → backend-11 real plan generator → backend-07 (spec) connectors.
+backend-09 streak → groups-01 groups + streak leaderboard → ml-33 PlanGenerator port → backend-10 events CRUD + plan endpoint → backend-11 real plan generator → backend-07 (spec) connectors.
 
 ### Frontend
 frontend-01 plan → 02 MVP (mock) → 03/04 UX review + fixes → 05 iRun look + onboarding → 07 real intervals.icu +

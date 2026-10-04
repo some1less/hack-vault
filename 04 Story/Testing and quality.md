@@ -5,8 +5,8 @@ Back to [[00 Home]] · Numbers are quoted from the archive logs at the time they
 ## By component
 | Component | Tooling | Latest recorded | Source |
 |---|---|---|---|
-| Frontend | Vitest + Testing Library (jsdom), oxlint, `tsc -b`, Playwright walkthroughs | **41 files / 569 tests** | frontend-15 |
-| Backend | pytest on a throwaway Postgres schema, ruff; integration tests on the compose stack | **147 passed** | backend-09, PR #52 |
+| Frontend | Vitest + Testing Library (jsdom), oxlint, `tsc -b`, Playwright walkthroughs | **44 files / 595 tests** | groups-01 |
+| Backend | pytest on a throwaway Postgres schema, ruff; integration tests on the compose stack | **163 passed** | groups-01 |
 | ML | pytest/unittest, ruff, strict mypy on the pipeline, plan generator `check` | **142 passed / 354 subtests**; 273 real requests / 3,026 sessions / **0 rule violations** | devops-05, devops-02 |
 | AI coach | `test_coach.py` (fake model client), `live_check.py` (real model, 25 cases + 8 attacks) | **76 passed** | backend-11, ai-01 |
 | Route map | pytest with canned ORS/Open‑Meteo/Overpass responses | **27 passed** | integration-06 |

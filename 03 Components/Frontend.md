@@ -30,6 +30,7 @@ Playwright walkthrough scripts. Served by nginx 1.27 in Docker.
 | `/plan` | AI Plan calendar (PR #43) |
 | `/route` | Route planner (lazy‑loaded: maplibre ≈ 1 MB stays out of the main bundle) |
 | `/coach` | iRunny chat / call (whitelist) |
+| `/groups`, `/groups/:id` | running groups, streak leaderboard |
 | `/profile`, `/u/:id` | own profile, public profile (no auth) |
 | `/preferences`, `/preferences/training` | body + training answers |
 | `/settings/{profile,security,connections}` | account, password & email, intervals.icu / ORS / iRunny |

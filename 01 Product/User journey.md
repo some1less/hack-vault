@@ -15,6 +15,7 @@ flowchart LR
     DB --> RT[Route /route]
     DB --> CO[AI coach /coach]
     DB --> PR[Profile → share link /u/:id]
+    DB --> GR[Groups → streak leaderboard]
     DB --> PF[Preferences / Settings]
 ```
 
@@ -51,4 +52,6 @@ These answers are exactly the input the [[ML planner]] needs (`TrainingAnswers` 
 - **Route** — pick a start (city, GPS, search, or click), distance and time → loop on the map + weather + elevation.
   Right‑click sets a finish point.
 - **AI coach** — chat or call iRunny: "too hard", "my knee hurts", "how was my last run?", "I can't run Sunday".
+- **Groups** — account menu → Groups: create a group or join one by typing its exact name; the group page is a
+  leaderboard of members' streaks (medals for the top 3, "Last day" / "Ended" chips, your row highlighted).
 - **Profile** — "Make profile public" in the account menu → copy share link → anyone sees `/u/:id`.

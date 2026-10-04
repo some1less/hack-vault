@@ -25,7 +25,8 @@ Back to [[00 Home]] · Honest list, as of 2026‑10‑04. ML backlog source of t
 ## Product / UX
 - Route: `duration_min` is walking time; geocode has no focus point; loops can miss length by ~30 % in places.
 - Streak: a run imported later with an older date isn't counted.
-- Not built: groups/competitions, points/customisation, GPX/FIT upload, doctor‑document health history,
+- Groups: joining is by exact name, so anyone who guesses a name can join (up to 10) — chosen for simplicity.
+- Not built: points/customisation, GPX/FIT upload, doctor‑document health history,
   weather‑adjusted targets.
 - Phone layout (desktop‑only by decision).
 

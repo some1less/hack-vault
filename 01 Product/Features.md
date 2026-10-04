@@ -1,6 +1,6 @@
 # Features
 
-Back to [[00 Home]] · Status as of 2026‑10‑04 (`develop` @ fd9e566).
+Back to [[00 Home]] · Status as of 2026‑10‑04 (`develop` @ 6daa2e7).
 
 Legend: ✅ on develop · 🟡 partial / mock only · 🔀 in an open PR · ❌ not built
 
@@ -13,6 +13,7 @@ Legend: ✅ on develop · 🟡 partial / mock only · 🔀 in an open PR · ❌ 
 | intervals.icu import (90 days activities + wellness), sync on dashboard open | ✅ | `IntervalsService` | backend-06, debug-03 |
 | Dashboard: weekly km, pace trend, records, wellness tiles, activities table | ✅ | `pages/Dashboard.tsx` | frontend-02, verify-02 |
 | Run streak card (window from the plan's rhythm) | ✅ | `GET /me/streak`, `StreakCard.tsx` | backend-09 |
+| **Running groups with a streak leaderboard** (create / join by name, up to 10 members, medals, owner handover) | ✅ (PR #51) | `/groups`, `/groups/:id` | groups-01 |
 | Profile + public profile sharing (`/u/:id`) | ✅ | `GET /users/{id}`, `PublicProfile.tsx` | backend-08, frontend-13 |
 | Preferences page (body + training answers, editable) | ✅ | `/preferences` | frontend-12 |
 | Settings: account, password & security, connected services | ✅ | `/settings/*` | frontend-10, 12 |
@@ -29,6 +30,6 @@ Legend: ✅ on develop · 🟡 partial / mock only · 🔀 in an open PR · ❌ 
 | 10 seeded demo users with planner‑made events | ✅ | `scripts/sql/seed.sql` | seed-01 |
 | Planning benchmark (simulated runners) | ✅ tool, protocol margins pending | `ml/benchmark/` | ml-27 |
 | Outcome models (speed / distance / break risk) from real histories | 🟡 in progress | `ml/outcome_model.py` | ml-32 |
-| Groups / competitions, points, GPX/FIT upload, doctor documents | ❌ | — | verify-02 |
+| Points / customisation, GPX/FIT upload, doctor documents | ❌ | — | verify-02 |
 
 See [[Known limits and backlog]] for what's missing and why.
